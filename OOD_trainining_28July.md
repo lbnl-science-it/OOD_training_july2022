@@ -8,6 +8,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 ---
+<style>section { font-size: 25px; }</style>
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
@@ -65,7 +66,7 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 
 ---
 
-# <!--fit--> OOD services available at Lawrencium
+### OOD services available at Lawrencium
 <style scoped>section { font-size: 28px; }</style>
 
 - Easy file management
@@ -81,15 +82,71 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ---
 
 # How to access OOD on Lawrencium?
-Web link to connect : [https://lrc-ondemand.lbl.gov/](https://lrc-ondemand.lbl.gov/)
+<style scoped>section { font-size: 25px; }</style>
+ 1. Web link to connect : [https://lrc-ondemand.lbl.gov/](https://lrc-ondemand.lbl.gov/)
+**Note:** Use Chrome or Firefox to brows this page. Safari has some issues.
 
 
+![w:700](authentication.png)
+
+2.  Use your LRC username and PIN+one-time password (OTP)
+        - Same creatials you use to login to Lawrencium 
 
 
+---
+
+### OOD Dashboard on Lawrencium
+On successful authentication you will see a OOD dashboard. 
+
+![w:800 center](dashboard.png)
+
+---
+## Interactive Apps: Jupyter notebook
+Click on Interactive apps --> Jupyter Server to open Jupyter notebook
+
+![w:800 center](Jupyter_button.png)
+
+---
+Interactive mode
+
+![ bg w:500 center](interactive.png)
+
+----
+Compute mode
+
+![bg w:440](compute.png) 
+![bg w:600](association.png)
+
+---
+![bg vertical w:700](JS_queue.png)
+![bg w:700](JS_launch.png)
+
+---
+![bg vertical w:700](JN_kernels.png)
+![bg w:700](JN_hello_world.png)
 
 
+---
+## Custom pyKernel
+---
+## Interactive Apps: Rstudio
 
+---
+## Interactive Apps: Matlab
 
+---
+## Desktop 
+### Using Desktop to launch VMD and ParaView
 
+---
+
+# File management
+
+---
+
+# Command-line shell access
+
+---
+# Job submission and management
 
 ---
