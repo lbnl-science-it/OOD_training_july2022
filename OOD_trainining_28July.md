@@ -1,5 +1,5 @@
 ---
-marp: true
+#marp: true
 theme: gaia
 color: #000
 footer: 'HPC training : 28 July, 2022'
