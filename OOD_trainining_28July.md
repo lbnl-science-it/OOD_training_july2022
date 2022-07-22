@@ -117,7 +117,7 @@ Compute mode
 ![bg w:440](compute.png) 
 ![bg w:600](association.png)
 
----
+----
 ![bg vertical w:700](JS_queue.png)
 ![bg w:700](JS_launch.png)
 
@@ -128,14 +128,36 @@ Compute mode
 
 ---
 ## Custom pyKernel
+If you’d like to use a language or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
+
+
+**Two ways of customization:** 
+1. Using a Conda environment
+2. Manually creating a new kernel
+
+[Click here for details.](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/open-ondemand/jupyter-server/)
+
 ---
 ## Interactive Apps: Rstudio
 
+![bg w:500](Rstudio.png)
+![bg w:500](RS_launch.png)
+
+----
+
+Compute and interactive mode 
+![bg w:500](RS_interactive.png)
+![bg w:500](RS_compute.png)
+
 ---
 ## Interactive Apps: Matlab
+![bg w:500](Matlab.png)
+![bg w:500](launch.png)
 
 ---
 ## Desktop 
+
+---
 ### Using Desktop to launch VMD and ParaView
 
 ---
