@@ -98,7 +98,7 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 **Note:** Use Chrome or Firefox to brows this page. Safari has some issues.
 
 
-![w:700](authentication.png)
+![w:700](Figures/authentication.png)
 
 2.  Use your LRC username and PIN+one-time password (OTP)
         - Same creatials you use to login to Lawrencium 
