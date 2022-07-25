@@ -1,5 +1,5 @@
 ---
-#marp: true
+marp: true
 theme: gaia
 color: #000
 footer: 'HPC training : 28 July, 2022'
@@ -8,7 +8,9 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 ---
+
 <style>section { font-size: 25px; }</style>
+
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
@@ -17,7 +19,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 
 ---
+
 <style scoped>section { font-size: 28px; }</style>
+
 <!-- paginate: true -->
 # Outline
 
@@ -32,7 +36,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
   
 
 ----
+
 <style scoped>section { font-size: 24px; }</style>
+
 # Introduction 
 - What is Open OnDemand?
    - OpenOnDemand is a web platform that provides an easy access to the cluster’s HPC resourcess and services.  
@@ -46,12 +52,14 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 ---
 <!-- _class: lead -->
+
 <style>
 footer { font-size: 20px
     }
 </style>
 
 <style scoped>section { font-size: 24px; }</style>
+
 - How OOD works at system level? 
 <style>
 img[alt~="center"] {
@@ -67,6 +75,7 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ---
 
 ### OOD services available at Lawrencium
+
 <style scoped>section { font-size: 28px; }</style>
 
 - Easy file management
@@ -82,7 +91,9 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ---
 
 # How to access OOD on Lawrencium?
+
 <style scoped>section { font-size: 25px; }</style>
+
  1. Web link to connect : [https://lrc-ondemand.lbl.gov/](https://lrc-ondemand.lbl.gov/)
 **Note:** Use Chrome or Firefox to brows this page. Safari has some issues.
 
@@ -128,14 +139,27 @@ Compute mode
 
 ---
 ## Custom pyKernel
-If you’d like to use a language or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
+If you’d like to use a different laguage or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
 
-
-**Two ways of customization:** 
-1. Using a Conda environment
+**Two ways  of addiing kernel:**
+1. Using conda environment
 2. Manually creating a new kernel
+   [Click here for details.](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/open-ondemand/jupyter-server/)
+   
 
-[Click here for details.](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/open-ondemand/jupyter-server/)
+---
+## Custom pyKernel: using conda environment
+
+````
+# Creating a pykernel for 3.9.12 version of python and installing packages
+
+module load python/3.9.12
+conda create --name=py39 ipykernel
+source activate py39
+python -m ipykernel install --user --name py39 --display-name="Bio_Chem"
+conda install -c conda-forge openmm
+conda install -c schrodinger pymol
+````
 
 ---
 ## Interactive Apps: Rstudio
@@ -155,20 +179,115 @@ Compute and interactive mode
 ![bg w:500](launch.png)
 
 ---
-## Desktop 
+## Launching Desktop 
+![bg w:400](desktop.png)
+![bg w:400](desktop_cf1.png)
+![bg w:400](desktop_launch.png)
+
+---
+
+## Desktop  
+![bg w:400](desktop_screen.png)
+![bg w:400](desktop_dropdown.png)
+![bg w:400](desktop_terminal.png)
 
 ---
 ### Using Desktop to launch VMD and ParaView
+![bg w:400](desktop_vmd_load.png)
+![bg w:400](Desktop_vmd_app.png)
+![bg w:400](desktop_vmd_protein.png)
 
 ---
 
+
 # File management
+- **Conventioanal approach: commad line**
+  - Linux file editors for editing files: vi, vim, nano, emacs
+  - File transfer: scp, rsync
+- **Globus for file transfer**
+- **Open OnDemand: Files feature**
+  - view and edit text files
+  - create or rename or delete files
+  - create or renae or delete directories
+  - file/directory upload and download
+  ![bg w:600 right](dashboard_files.png)
+
+---
+
+### Files : Home directory  
+
+![bg w:900 center](files_home_dir.png)
 
 ---
 
 # Command-line shell access
+![bg w:600](dashboard_shell.png)
+![bg w:600](shell.png)
+
 
 ---
 # Job submission and management
 
+![bg w:600](dashboard_jobs.png)
+![bg w:600](active_jobs.png)
+
+
+---
+# Job composer and template
+
+![bg w:600](job_composer.png)
+![bg w:600](create_template.png)
+
+---
+### Submission script 
+
+![bg w:500](default_path.png)
+![bg w:600](script.png)
+
+---
+# Job submission directory
+
+Job composer creates a working directory by default on the path /global/home/users/spsoni/ondemand/data/sys/myjobs/projects/default
+-  **Use default path:** Copy/upload all the files required for the jobs on this path before hitting Subimit button.
+   -  click 'Open Dir' button at the bottom of the job script content.
+   -  using a file explorer upload or transfer files
+
+![w:300 center](open_dir.png)
+
+  
+
+
+---
+**OR**
+
+- **Set different working directory:** If you want to use files saved on different location and would like to run job in that diectory, for example: scratch.
+  - add following command line in your job script
+  ````
+  cd /global/scratch/users/spsoni/my_working_dir
+  ````
+  **Note:** Use path you aim to set for your working directory. 
+---
+
+# Log out and clean up
+- Log out of the portal
+
+- Clean up
+  - The portal stores temporary files for interactive apps on the path $HOME//ondemand/data/sys/dashboard/batch_connect/sys
+  - It is a good practice to clean up this directory periodically.
+  ```
+  rm -rf $HOME/ondemand/data/sys/dashboard/batch_connect/sys/* 
+  ```
+
+---
+
+  # Getting help
+  - Vertual office hours: 
+    - Walk in: every tuesday 10 am to 11.30 am
+  - Send us tickets at hpcshelp@lbl.gov
+  - More information about LBNL Supercluster and scientic computing services can be found [here](https://it.lbl.gov/service/scienceit/). 
+
+Your feedback is important to us for improving HPC services and training.
+Please fill out [training survey](https://docs.google.com/forms/d/1PrqmX6Y0ZO88w2_cV1LerOIkNqo8oalWhxw3lzyz3mw/edit)
+
+![w:240 center](thankyou.png)
 ---
