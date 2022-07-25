@@ -68,7 +68,7 @@ img[alt~="center"] {
 }
 </style>
 
-![w:700 center](ood_system_view.png)
+![w:700 center](Figures/ood_system_view.png)
 
 Users are able to use HPC services more efficiently through Open OnDemand. 
 
@@ -109,32 +109,32 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ### OOD Dashboard on Lawrencium
 On successful authentication you will see a OOD dashboard. 
 
-![w:800 center](dashboard.png)
+![w:800 center](Figures/dashboard.png)
 
 ---
 ## Interactive Apps: Jupyter notebook
 Click on Interactive apps --> Jupyter Server to open Jupyter notebook
 
-![w:800 center](Jupyter_button.png)
+![w:800 center](Figures/Jupyter_button.png)
 
 ---
 Interactive mode
 
-![ bg w:500 center](interactive.png)
+![ bg w:500 center](Figures/interactive.png)
 
 ----
 Compute mode
 
-![bg w:440](compute.png) 
-![bg w:600](association.png)
+![bg w:440](Figures/compute.png) 
+![bg w:600](Figures/association.png)
 
 ----
-![bg vertical w:700](JS_queue.png)
-![bg w:700](JS_launch.png)
+![bg vertical w:700](Figures/JS_queue.png)
+![bg w:700](Figures/JS_launch.png)
 
 ---
-![bg vertical w:700](JN_kernels.png)
-![bg w:700](JN_hello_world.png)
+![bg vertical w:700](Figures/JN_kernels.png)
+![bg w:700](Figures/JN_hello_world.png)
 
 
 ---
@@ -164,38 +164,38 @@ conda install -c schrodinger pymol
 ---
 ## Interactive Apps: Rstudio
 
-![bg w:500](Rstudio.png)
-![bg w:500](RS_launch.png)
+![bg w:500](Figures/Rstudio.png)
+![bg w:500](Figures/RS_launch.png)
 
 ----
 
 Compute and interactive mode 
-![bg w:500](RS_interactive.png)
-![bg w:500](RS_compute.png)
+![bg w:500](Figures/RS_interactive.png)
+![bg w:500](Figures/RS_compute.png)
 
 ---
 ## Interactive Apps: Matlab
-![bg w:500](Matlab.png)
-![bg w:500](launch.png)
+![bg w:500](Figures/Matlab.png)
+![bg w:500](Figures/launch.png)
 
 ---
 ## Launching Desktop 
-![bg w:400](desktop.png)
-![bg w:400](desktop_cf1.png)
-![bg w:400](desktop_launch.png)
+![bg w:400](Figures/desktop.png)
+![bg w:400](Figures/desktop_cf1.png)
+![bg w:400](Figures/desktop_launch.png)
 
 ---
 
 ## Desktop  
-![bg w:400](desktop_screen.png)
-![bg w:400](desktop_dropdown.png)
-![bg w:400](desktop_terminal.png)
+![bg w:400](Figures/desktop_screen.png)
+![bg w:400](Figures/desktop_dropdown.png)
+![bg w:400](Figures/desktop_terminal.png)
 
 ---
 ### Using Desktop to launch VMD and ParaView
-![bg w:400](desktop_vmd_load.png)
-![bg w:400](Desktop_vmd_app.png)
-![bg w:400](desktop_vmd_protein.png)
+![bg w:400](Figures/desktop_vmd_load.png)
+![bg w:400](Figures/Desktop_vmd_app.png)
+![bg w:400](Figures/desktop_vmd_protein.png)
 
 ---
 
@@ -210,39 +210,39 @@ Compute and interactive mode
   - create or rename or delete files
   - create or renae or delete directories
   - file/directory upload and download
-  ![bg w:600 right](dashboard_files.png)
+  ![bg w:600 right](Figures/dashboard_files.png)
 
 ---
 
 ### Files : Home directory  
 
-![bg w:900 center](files_home_dir.png)
+![bg w:900 center](Figures/files_home_dir.png)
 
 ---
 
 # Command-line shell access
-![bg w:600](dashboard_shell.png)
-![bg w:600](shell.png)
+![bg w:600](Figures/dashboard_shell.png)
+![bg w:600](Figures/shell.png)
 
 
 ---
 # Job submission and management
 
-![bg w:600](dashboard_jobs.png)
-![bg w:600](active_jobs.png)
+![bg w:600](Figures/dashboard_jobs.png)
+![bg w:600](Figures/active_jobs.png)
 
 
 ---
 # Job composer and template
 
-![bg w:600](job_composer.png)
-![bg w:600](create_template.png)
+![bg w:600](Figures/job_composer.png)
+![bg w:600](Figures/create_template.png)
 
 ---
 ### Submission script 
 
-![bg w:500](default_path.png)
-![bg w:600](script.png)
+![bg w:500](Figures/default_path.png)
+![bg w:600](Figures/script.png)
 
 ---
 # Job submission directory
@@ -252,7 +252,7 @@ Job composer creates a working directory by default on the path /global/home/use
    -  click 'Open Dir' button at the bottom of the job script content.
    -  using a file explorer upload or transfer files
 
-![w:300 center](open_dir.png)
+![w:300 center](Figures/open_dir.png)
 
   
 
@@ -289,5 +289,5 @@ Job composer creates a working directory by default on the path /global/home/use
 Your feedback is important to us for improving HPC services and training.
 Please fill out [training survey](https://docs.google.com/forms/d/1PrqmX6Y0ZO88w2_cV1LerOIkNqo8oalWhxw3lzyz3mw/edit)
 
-![w:240 center](thankyou.png)
+![w:240 center](Figures/thankyou.png)
 ---
