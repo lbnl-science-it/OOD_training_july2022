@@ -46,7 +46,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 - Why OOD?
   - new users: intutive and easy access to computing resourses, removes barrier in using HPC resourses for their research. 
   - advanced users: alternate and conviniet way to traditional command line access
-  - System admins: Support users form diverse backgrounds
+  - System admins: Support users from diverse backgrounds
 
 
 
@@ -101,7 +101,7 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ![w:700](Figures/authentication.png)
 
 2.  Use your LRC username and PIN+one-time password (OTP)
-        - Same creatials you use to login to Lawrencium 
+        - Same credentials you use to login to Lawrencium 
 
 
 ---
@@ -139,9 +139,9 @@ Compute mode
 
 ---
 ## Custom pyKernel
-If you’d like to use a different laguage or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
+If you’d like to use a different language or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
 
-**Two ways  of addiing kernel:**
+**Two ways  of adding kernel:**
 1. Using conda environment
 2. Manually creating a new kernel
    [Click here for details.](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/open-ondemand/jupyter-server/)
@@ -201,14 +201,14 @@ Compute and interactive mode
 
 
 # File management
-- **Conventioanal approach: commad line**
+- **Conventional approach: command line**
   - Linux file editors for editing files: vi, vim, nano, emacs
   - File transfer: scp, rsync
 - **Globus for file transfer**
 - **Open OnDemand: Files feature**
   - view and edit text files
   - create or rename or delete files
-  - create or renae or delete directories
+  - create or rename or delete directories
   - file/directory upload and download
   ![bg w:600 right](Figures/dashboard_files.png)
 
@@ -281,7 +281,7 @@ Job composer creates a working directory by default on the path /global/home/use
 ---
 
   # Getting help
-  - Vertual office hours: 
+  - Virtual office hours: 
     - Walk in: every tuesday 10 am to 11.30 am
   - Send us tickets at hpcshelp@lbl.gov
   - More information about LBNL Supercluster and scientic computing services can be found [here](https://it.lbl.gov/service/scienceit/). 
