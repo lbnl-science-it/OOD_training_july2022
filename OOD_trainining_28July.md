@@ -35,7 +35,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 
 Git repo for this training: https://github.com/lbnl-science-it/OOD_training_july2022.git/. 
-Recording for the training will be uploaded in same github repository. 
+Recording for the training will be uploaded in the same github repository. 
 
 ----
 
@@ -225,7 +225,8 @@ Compute and interactive mode
 
 ---
 ### Using Desktop to launch ParaView
-![bg w:400](Figures/.)
+![bg w:600](Figures/desktop_paraview.png)
+![bg w:500](Figures/paraview.png)
 
 ---
 # Files: file management
