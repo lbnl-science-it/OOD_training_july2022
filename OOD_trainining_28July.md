@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: gaia
 color: #000
 footer: 'HPC training : 28 July, 2022'
@@ -153,7 +153,7 @@ module load python/3.9.12
 # Create the environment in your home directory: 
 conda create --name=py39 python=3.9 ipykernel
 source activate py39
-python -m ipykernel install --user --name py39--display-name="py39(Sci)"
+python -m ipykernel install --user --name py39 --display-name="py39(Sci)"
 conda install -c conda-forge scipy
 ```
 Creating environment in scratch space: $USER is your own username.
@@ -164,7 +164,7 @@ python -m ipykernel install --name=py39_scr --prefix=/global/scratch/users/$USER
 #create sysmlink to kernel in custom path
 ln -s /global/scratch/users/$USER/py39 /global/home/users/$USER/.local/share/jupyter/kernels/py39
 ```
-You need to create a symlink in /global/home/users/usename/.julia/share/jupyter/kernels/ directory so that kernel appears in the jupyter notebook.
+You need to create a symlink in /global/home/users/$USER/.local/share/jupyter/kernels/ directory so that kernel appears in the jupyter notebook.
 
 
 ---
