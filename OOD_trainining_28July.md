@@ -33,9 +33,13 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 6. [Clusters: LRC shell access](#25)
 7. [Jobs: job management and submission](#26)
 
+---
+## Training style : mostly demonstration
 
-Git repo for this training: https://github.com/lbnl-science-it/OOD_training_july2022.git/. 
-Recording for the training will be uploaded in the same github repository. 
+- If you have account on Lawrencium then open OOD dashboard and try it yourself as we go. 
+- Don't have account on Lawrencium? Don't worry! You can watch for now and try it later using training materail. 
+- Training material is available on GitHub(https://github.com/lbnl-science-it/OOD_training_july2022.git/.)
+- Recording for the training will be available in the same GitHub repository. 
 
 ----
 
@@ -147,19 +151,18 @@ Customizing python kernel using conda environment
 # Creating a pykernel for 3.9.12 version of python and installing packages
 module load python/3.9.12
 # Create the environment in your home directory: 
-conda create --name=py39 ipykernel
+conda create --name=py39 python=3.9 ipykernel
 source activate py39
-python -m ipykernel install --user --name py39 --display-name="py39(Biochem)"
-conda install -c conda-forge openmm
-conda install -c schrodinger pymol
+python -m ipykernel install --user --name py39--display-name="py39(Sci)"
+conda install -c conda-forge scipy
 ```
-Creating environment in scratch space: Use your own **username** in following command lines.
+Creating environment in scratch space: $USER is your own username.
 ```
-conda create -prefix=/global/scratch/users/username/py39 ipykernel
-source activate /global/scratch/users/username/py39
-python -m ipykernel install --name=py39 --prefix=/global/scratch/users/username/py39 --displayname="py39_scratch"
+conda create -p /global/scratch/users/$USER/py39_scr python=3.9 ipykernel
+source activate /global/scratch/users/$USER/py39_scr
+python -m ipykernel install --name=py39_scr --prefix=/global/scratch/users/$USER/py39_scr --display-name="py39_scratch"
 #create sysmlink to kernel in custom path
-ln -s /global/scratch/users/username/py39 /global/home/users/username/.local/share/jupyter/kernels/py39
+ln -s /global/scratch/users/$USER/py39 /global/home/users/$USER/.local/share/jupyter/kernels/py39
 ```
 You need to create a symlink in /global/home/users/usename/.julia/share/jupyter/kernels/ directory so that kernel appears in the jupyter notebook.
 
