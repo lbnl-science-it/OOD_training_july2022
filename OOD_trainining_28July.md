@@ -24,16 +24,18 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 
 <!-- paginate: true -->
 # Outline
-
+<style scoped>section { font-size: 26px; }</style>
 1. [Introduction](#3)
-2. [Accessing OOD on Lawrencium](#4)
-3. [OOD attributes](#5)
-   - Interactive Applications: Jupyter notebook, Rstudio, Matlab, desktop environment
-   -  Customize Jupyter kernels 
-   -  File explorer
-   -  Cluster shall access
-   -  Job management
-  
+2. [Accessing OOD on Lawrencium](#5)
+3. [Interactive Apps: Jupyter Server, RStudio Server, MATLAB, Desktop](#7)
+4. [Customizing Jupyter Kernels: Python and Julia](#13)
+5. [Files: file management](#23)
+6. [Clusters: LRC shell access](#25)
+7. [Jobs: job management and submission](#26)
+
+
+Git repo for this training: https://github.com/lbnl-science-it/OOD_training_july2022.git/. 
+Recording for the training will be uploaded in same github repository. 
 
 ----
 
@@ -44,9 +46,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
    - OpenOnDemand is a web platform that provides an easy access to the cluster’s HPC resourcess and services.  
    - Designed and developed by Ohio Supercomputer Center.
 - Why OOD?
-  - new users: intutive and easy access to computing resourses, removes barrier in using HPC resourses for their research. 
-  - advanced users: alternate and conviniet way to traditional command line access
-  - System admins: Support users from diverse backgrounds
+  - **New users:** intutive and easy access to computing resourses, removes barrier in using HPC resourses for their research. 
+  - **Advanced users:** alternate and convenient way to traditional command line access
+  
 
 
 
@@ -74,34 +76,18 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 
 ---
 
-### OOD services available at Lawrencium
-
-<style scoped>section { font-size: 28px; }</style>
-
-- Easy file management
-- Command-line shell access
-- Facile job submission and monitoring
-- Interactive applications:
-  - Graphical desktop environment
-  - Jupyter notebook
-  - Rstudio
-  - Matlab
-- More applications can be added as per user demand
-
----
-
-# How to access OOD on Lawrencium?
+# Accessing OOD on Lawrencium
 
 <style scoped>section { font-size: 25px; }</style>
 
  1. Web link to connect : [https://lrc-ondemand.lbl.gov/](https://lrc-ondemand.lbl.gov/)
-**Note:** Use Chrome or Firefox to brows this page. Safari has some issues.
+**Note:** Use Chrome or Firefox to brows this page. Safari has known [authentication issues](https://osc.github.io/ood-documentation/master/issue/overview.html).
 
 
 ![w:700](Figures/authentication.png)
 
 2.  Use your LRC username and PIN+one-time password (OTP)
-        - Same credentials you use to login to Lawrencium 
+    - same credentials you use to login Lawrencium cluster
 
 
 ---
@@ -109,20 +95,22 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 ### OOD Dashboard on Lawrencium
 On successful authentication you will see a OOD dashboard. 
 
-![w:800 center](Figures/dashboard.png)
+![w:980 center](Figures/dashboard.png)
 
 ---
-## Interactive Apps: Jupyter notebook
-Click on Interactive apps --> Jupyter Server to open Jupyter notebook
+## Interactive Apps: Jupyter server
+Click on **Interactive apps --> Jupyter Server** to open Jupyter notebook
 
 ![w:800 center](Figures/Jupyter_button.png)
 
 ---
+
 Interactive mode
 
-![ bg w:500 center](Figures/interactive.png)
+![ bg w:600 center](Figures/interactive.png)
 
 ----
+
 Compute mode
 
 ![bg w:440](Figures/compute.png) 
@@ -133,39 +121,77 @@ Compute mode
 ![bg w:700](Figures/JS_launch.png)
 
 ---
-![bg vertical w:700](Figures/JN_kernels.png)
-![bg w:700](Figures/JN_hello_world.png)
-
+![bg vertical w:800](Figures/JN_kernels.png)
+![bg w:800](Figures/JN_hello_world.png)
 
 ---
-## Custom pyKernel
+To load Jupyter lab simply add **lab/** before **tree/** in jupyter server url.
+![bg right:60% vertical w:500](Figures/JN_server_url.png)
+![bg w:500](Figures/JN_lab_url.png)
+![bg w:500](Figures/JN_lab_dashboard.png)
+
+---
+## Customizing Jupyter Kernels : Python and Julia
 If you’d like to use a different language or version of python or different conda environment not indicated in the drop-down menu of jupyter notebook you’ll need to create your own kernel.
 
-**Two ways  of adding kernel:**
+### **Python:**
+There are two ways to add python kernel to jupyter notebook. 
 1. Using conda environment
 2. Manually creating a new kernel
    [Click here for details.](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/open-ondemand/jupyter-server/)
    
-
 ---
-## Custom pyKernel: using conda environment
+Customizing python kernel using conda environment
 
-````
+```
 # Creating a pykernel for 3.9.12 version of python and installing packages
-
 module load python/3.9.12
+# Create the environment in your home directory: 
 conda create --name=py39 ipykernel
 source activate py39
-python -m ipykernel install --user --name py39 --display-name="Bio_Chem"
+python -m ipykernel install --user --name py39 --display-name="py39(Biochem)"
 conda install -c conda-forge openmm
 conda install -c schrodinger pymol
-````
+```
+Creating environment in scratch space: Use your own **username** in following command lines.
+```
+conda create -prefix=/global/scratch/users/username/py39 ipykernel
+source activate /global/scratch/users/username/py39
+python -m ipykernel install --name=py39 --prefix=/global/scratch/users/username/py39 --displayname="py39_scratch"
+#create sysmlink to kernel in custom path
+ln -s /global/scratch/users/username/py39 /global/home/users/username/.local/share/jupyter/kernels/py39
+```
+You need to create a symlink in /global/home/users/usename/.julia/share/jupyter/kernels/ directory so that kernel appears in the jupyter notebook.
+
 
 ---
-## Interactive Apps: Rstudio
+### **Julia:**
+Julia kernel can be added in Jupyter for writing a Julia code in Jupyter notebook. To add a Julia kernel to Jupyter we only need to add the IJulia package.
 
-![bg w:500](Figures/Rstudio.png)
-![bg w:500](Figures/RS_launch.png)
+```
+module load julia/1.0.3
+julia --version
+julia
+using Pkg
+Pkg.add("IJulia")
+Pkg.build("IJulia")
+```
+
+To remove unwanted jupyter kernel use following commands.
+
+```
+module load python/3.9.12
+jupyter kernelspec list
+jupyter kernelspec uninstall julia-1.0
+jupyter kernelspec uninstall py39
+```
+
+
+---
+## Interactive Apps: RStudio
+
+![bg w:600](Figures/Rstudio.png)
+![bg w:600](Figures/RS_launch.png)
 
 ----
 
@@ -174,12 +200,12 @@ Compute and interactive mode
 ![bg w:500](Figures/RS_compute.png)
 
 ---
-## Interactive Apps: Matlab
-![bg w:500](Figures/Matlab.png)
-![bg w:500](Figures/launch.png)
+## Interactive Apps: MATLAB
+![bg w:600](Figures/Matlab.png)
+![bg w:600](Figures/launch.png)
 
 ---
-## Launching Desktop 
+##  Interactive Apps: Desktop 
 ![bg w:400](Figures/desktop.png)
 ![bg w:400](Figures/desktop_cf1.png)
 ![bg w:400](Figures/desktop_launch.png)
@@ -192,15 +218,17 @@ Compute and interactive mode
 ![bg w:400](Figures/desktop_terminal.png)
 
 ---
-### Using Desktop to launch VMD and ParaView
+### Using Desktop to launch VMD 
 ![bg w:400](Figures/desktop_vmd_load.png)
 ![bg w:400](Figures/Desktop_vmd_app.png)
 ![bg w:400](Figures/desktop_vmd_protein.png)
 
 ---
+### Using Desktop to launch ParaView
+![bg w:400](Figures/.)
 
-
-# File management
+---
+# Files: file management
 - **Conventional approach: command line**
   - Linux file editors for editing files: vi, vim, nano, emacs
   - File transfer: scp, rsync
@@ -220,7 +248,7 @@ Compute and interactive mode
 
 ---
 
-# Command-line shell access
+# Clusters: LRC shell access
 ![bg w:600](Figures/dashboard_shell.png)
 ![bg w:600](Figures/shell.png)
 
@@ -245,7 +273,7 @@ Compute and interactive mode
 ![bg w:600](Figures/script.png)
 
 ---
-# Job submission directory
+# Jobs:  submission directory
 
 Job composer creates a working directory by default on the path /global/home/users/spsoni/ondemand/data/sys/myjobs/projects/default
 -  **Use default path:** Copy/upload all the files required for the jobs on this path before hitting Subimit button.
@@ -282,7 +310,8 @@ Job composer creates a working directory by default on the path /global/home/use
 
   # Getting help
   - Virtual office hours: 
-    - Walk in: every tuesday 10 am to 11.30 am
+    - Time: 10.30 am to noon every Wednesday
+    - Online [request](https://docs.google.com/forms/d/e/1FAIpQLScBbNcr0CbhWs8oyrQ0pKLmLObQMFmYseHtrvyLfOAoIInyVA/viewform)
   - Send us tickets at hpcshelp@lbl.gov
   - More information about LBNL Supercluster and scientic computing services can be found [here](https://it.lbl.gov/service/scienceit/). 
 
