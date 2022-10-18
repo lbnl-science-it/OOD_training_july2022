@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: gaia
 color: #000
 footer: 'HPC training : 28 July, 2022'
@@ -40,18 +40,19 @@ backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 - Don't have account on Lawrencium? Don't worry! You can watch for now and try it later using training materail. 
 - Training material is available on GitHub(https://github.com/lbnl-science-it/OOD_training_july2022.git/.)
 - Recording for the training will be available in the same GitHub repository. 
-
+- How to use Lawrencium? 
+  - One [click](https://it.lbl.gov/resource/hpc/for-users/hpc-documentation/) to the documentationnpm install -g markdown-it 
 ----
 
 <style scoped>section { font-size: 24px; }</style>
 
 # Introduction 
 - What is Open OnDemand?
-   - OpenOnDemand is a web platform that provides an easy access to the cluster’s HPC resourcess and services.  
+   - OpenOnDemand is a web platform that provides an easy access to the cluster’s HPC resourses and services.  
    - Designed and developed by Ohio Supercomputer Center.
 - Why OOD?
-  - **New users:** intutive and easy access to computing resourses, removes barrier in using HPC resourses for their research. 
-  - **Advanced users:** alternate and convenient way to traditional command line access
+  - **New users:** intuitive and easy access to computing resourses, removes barrier in using HPC resourses for their research. 
+  - **Advanced users:** alternative and convenient way to traditional command line access
   
 
 
@@ -85,7 +86,7 @@ Users are able to use HPC services more efficiently through Open OnDemand.
 <style scoped>section { font-size: 25px; }</style>
 
  1. Web link to connect : [https://lrc-ondemand.lbl.gov/](https://lrc-ondemand.lbl.gov/)
-**Note:** Use Chrome or Firefox to brows this page. Safari has known [authentication issues](https://osc.github.io/ood-documentation/master/issue/overview.html).
+**Note:** Use Chrome or Firefox to browse this page. Safari has known [authentication issues](https://osc.github.io/ood-documentation/master/issue/overview.html).
 
 
 ![w:700](Figures/authentication.png)
